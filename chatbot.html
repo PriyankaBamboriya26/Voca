@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=sentiment_satisfied"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_circle_down"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="chatbot.css"/>
+</head>
+<body>
+  <div class="chatbot-popup">
+    <div class="chat-header">
+      <div class="header-info">
+        <i class="fas fa-robot chatbot-logo"></i>
+        <h2 class="logo-text">Chatbot</h2>
+      </div>
+      <button id="close-chatbot" class="material-symbols-rounded">arrow_circle_down</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="message bot-message">
+        <i class="fas fa-robot bot-avatar"></i>
+        <div class="message-text">Hey there! <br> How can I help you today?</div>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <form action="#" class="chat-form">
+        <textarea placeholder="Message..." class="message-input" required></textarea>
+        <div class="chat-controls">
+          <button type="submit" class="material-symbols-rounded" id="send-message">arrow_circle_down</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 💬 Voice recognition logic -->
+  <script>
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.continuous = true;
+recognition.lang = 'en-US';
+
+recognition.onstart = () => {
+  console.log("Chatbot listening...");
+};
+
+recognition.onresult = (event) => {
+  const transcript = event.results[event.resultIndex][0].transcript.trim().toLowerCase();
+  console.log("Chatbot heard:", transcript);
+
+  const messageInput = document.querySelector(".message-input");
+  if (messageInput) {
+    messageInput.value = transcript;
+    document.getElementById("send-message").click();
+  }
+};
+
+recognition.onerror = (event) => {
+  console.error("Speech recognition error:", event.error);
+};
+
+recognition.onend = () => {
+  console.log("Chatbot stopped listening.");
+};
+
+// 🔁 Receive messages from parent (main page)
+window.addEventListener("message", (event) => {
+  if (event.data === "startChatbotRecognition") {
+    console.log("Received startChatbotRecognition");
+    recognition.start();
+  } else if (event.data === "stopChatbotRecognition") {
+    recognition.stop();
+  }
+});
+
+// 🔒 Close button
+document.getElementById('close-chatbot').addEventListener('click', () => {
+  // 🔇 Stop any speech immediately
+  window.speechSynthesis.cancel();
+
+// Stop recognition if active
+if (typeof recognition !== 'undefined') recognition.stop();
+
+// Inform parent to hide chatbot and resume Voca
+window.parent.postMessage('closeChatbot', '*');
+});
+</script>
+
+  <script src="./chatbot.js"></script>
+  <noscript>you need js</noscript>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo (2).png">
+    <title>Voca-Your Voice, Our Command</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Grechen+Fuemen&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Voca.css">
+</head>
+<body>
+    <section id="home">
+    <header>
+        <nav class="navbar">
+
+            <a href="#" class="logo">VOCA</a>
+            <ul class="menu_links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#aboutus">About us</a></li>
+                <li><a href="#contactus">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+   
+    <section class="hero_section">
+        <div class="content">
+            <h1>WelCome to Voca<br><span>
+            Your Smarter Voice Assistant</span></h1>
+            <p>
+              Your Voice, Our Command<br>
+              Integrate Smarter, Work Faster!
+            </p>
+
+        </div>
+    </section>
+    <div class="floating-icons">
+        <button class="icon-btn mic-btn" title="Voice Input" id="startbtn">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <button class="icon-btn chat-btn" title="Chatbot">
+          <i class="fas fa-robot"></i>
+        </button>
+      </div>
+      <div id="chatbot-container" style="display: none; position: fixed; bottom: 90px; right: 20px; width: 420px; height: 550px; z-index: 1000; box-shadow: 0 0 10px rgba(0,0,0,0.3); border-radius: 10px; overflow: hidden; background: white;">
+        <iframe src="chatbot.html" style="width: 100%; height: 100%; border: none; border-radius: 10px;"></iframe>
+     </div>
+    </section>
+    
+    <section id="aboutus">
+    <div class="heading">
+        <h1>About Us</h1>
+        <p>We believe in turning voices into powerful commands, making human- machine interaction more intutive..</p>
+    </div>
+    <div class="container">
+        <section class="about">
+            <div class="about_image">
+                <img src="voice_recbg3.jpg" alt="about">
+            </div>
+            <div class="about_content">
+                <h2>Your Words, Our Intelligence...</h2>
+                <p>This platform enables voice-based interactions, making digital access seamless, especially for physically disabled users. Using speech recognition, we eliminate the need for traditional inputs. Beyond this website, we aim to integrate this technology into various platforms, promoting inclusive, barrier-free digital experiences for all users. We are committed to transforming digital interfaces into intutive, accessible environments.</p>
+                <a href="aboutus.html" class="read_more" target="_blank">Read More</a>
+            </div>
+        </section>
+
+    </div>
+    </section>
+    
+    <section id="services">
+    <div>
+        <div class="heading"><h1 class="ser_heading">Our Services</h1></div>
+        <div class="row">
+            <div class="box">
+                <img src="servicesimg.jpg" alt="services">
+                <h3>Voice Navigation</h3>
+                <p>Users can control the website with voice commands-simply say "scroll-up" or "scroll-down" to navigate the page.</p>
+                <a href="service1.html" target="_blank"><button class="btn">See More</button></a>
+            </div>
+            <div class="box">
+                <img src="serviceimg.jpg" alt="services">
+                <h3>Voice Form Fill</h3>
+                <p>Instead of typing, users can fill out forms using voice commands, making the process quicker and more accessible.</p>
+                <a href="service2.html" target="_blank"><button class="btn">See More</button></a>
+            </div>
+            <div class="box">
+                <img src="serimg2.jpg" alt="services">
+                <h3>Speak-to-Search</h3>
+                <p>Users can perform searches by speaking their queries aloud, making it easier to find content without manual input.</p>
+                <a href="service3.html" target="_blank"><button class="btn">See More</button></a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="contact" id="contactus">
+        <div class="heading">
+            <h1>Contact Us</h1>
+            <p>Reach out to us effortlessly using voice commands for inquiries, support, feedback or any assistance you need...</p>
+        </div>
+        <div class="container2">
+            <div class="contactInfo">
+                <div class="box2">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>LNCT College, Bhopal</p>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+918120675956</p>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>priyankabamboriya@123</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input id="name" type="text" name="" required="required" aria-label="name">
+                        <span >Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input id="email" type="text" name="" required="required" aria-label="email">
+                        <span >Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea id="message" required="required" aria-label="message"></textarea>
+                        <span >Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input id="submit" type="submit" name="" value="Submit">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="footerContainer">
+        <div class="socialIcons"> 
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by<span class="designer">Innovibes</span></p>
+    </div>
+
+ 
+
+    <script>
+        const chatButton = document.querySelector('.chat-btn');
+        const chatbotContainer = document.getElementById('chatbot-container');
+      
+        // Open chatbot: pause Voca and tell iframe to start recognition
+chatButton.addEventListener('click', () => {
+    chatbotContainer.style.display = 'block';
+    if (window.pauseVoca) window.pauseVoca();
+
+    // Wait for chatbot to load, then send message to start recognition
+    setTimeout(() => {
+        chatbotContainer.querySelector("iframe").contentWindow.postMessage("startChatbotRecognition", "*");
+    }, 5);
+});
+
+// Close chatbot: triggered from inside iframe
+window.addEventListener('message', (event) => {
+    if (event.data === 'closeChatbot') {
+        chatbotContainer.style.display = 'none';
+        if (window.resumeVoca) window.resumeVoca();
+    }
+});
+</script>
+
+    
+    
+    <script src="./Voca.js"></script>
+    <noscript>you need js</noscript>
+</body>
+</html>
+    
+</body>
+</html>
