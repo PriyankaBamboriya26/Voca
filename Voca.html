@@ -205,6 +205,25 @@ window.addEventListener('message', (event) => {
     
     <script src="./Voca.js"></script>
     <noscript>you need js</noscript>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector("header");
+        
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                header.style.top = "-100px"; // hides header
+            } else {
+                // Scrolling up
+                header.style.top = "0";
+            }
+        
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    </script>
 </body>
 </html>
     
